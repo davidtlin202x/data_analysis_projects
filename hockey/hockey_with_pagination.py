@@ -19,6 +19,8 @@ for p in range(1,25):
         row = [x.get_text(strip=True) for x in tr.find_all('td')]
         data_rows.append(row)
 
+    time.sleep(0.2) # Add a wait time to avoid overloading the server
+
 df = pd.DataFrame(data_rows, columns=columns)
 print(df.head())
 print(df.shape)
